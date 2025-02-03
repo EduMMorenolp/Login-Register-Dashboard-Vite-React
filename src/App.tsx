@@ -1,34 +1,19 @@
-import "./App.css";
-import { Routes, Route, Link } from 'react-router-dom'
+// src/routes.tsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import DashboardPage from "./pages/DashboardPage";
 
-// Pages
-import Login from "./pages/Login"
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard"; 
-
-function App() {
+const AppRoutes = () => {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Login</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
-      </nav>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
-    </div>
+    </BrowserRouter>
   );
-}
+};
 
-export default App;
+export default AppRoutes;
