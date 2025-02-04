@@ -7,18 +7,92 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependency directories
+node_modules/
+dist/
+dist-ssr/
+build/
+coverage/
 
-# Editor directories and files
+# IDEs and editors
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
+*.iml
+.cache/
 .DS_Store
+.thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build tools
+.parcel-cache/
+.webpack/
+.webpack-dev-server/
+.next/
+.nuxt/
+.out/
+.svelte-kit/
+
+# TypeScript
+*.tsbuildinfo
+*.d.ts.map
+
+# System files
+*.tmp
+*.swp
+*.swo
+*.swn
+*.bak
+*.class
+*.jar
+*.exe
+*.dll
+*.obj
+*.o
+*.a
+*.lib
+*.so
+*.dylib
+*.ncb
+*.sdf
 *.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+*.pdb
+*.idb
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# CI/CD
+.husky/
+.github/workflows/*.log
+
+# Optional: Ignore lock files if you prefer not to commit them
+package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Optional: Ignore specific build artifacts
+*.gz
+*.zip
+*.tar
+*.tgz
