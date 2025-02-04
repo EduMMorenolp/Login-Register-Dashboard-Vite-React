@@ -5,20 +5,25 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import DashboardPage from "./pages/DashboardPage";
 import PrivateRoute from "./components/PrivateRoute";
+import Widgets from "./components/Widgets";
+import ProfileContent from "./components/ProfileContent";
+import SettingsContent from "./components/SettingsContent";
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Ruta pública: Login */}
+        {/* Rutas públicas */}
         <Route path="/login" element={<LoginPage />} />
-
-        {/* Ruta pública: Registro */}
         <Route path="/register" element={<RegisterPage />} />
 
-        {/* Ruta protegida: Dashboard */}
+        {/* Rutas protegidas */}
         <Route element={<PrivateRoute />}>
-          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/dashboard" element={<DashboardPage />}>
+            <Route index element={<Widgets />} />
+            <Route path="profile" element={<ProfileContent />} />
+            <Route path="settings" element={<SettingsContent />} />
+          </Route>
         </Route>
 
         {/* Redirigir la ruta raíz al login */}
